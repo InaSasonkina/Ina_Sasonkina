@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Личные данные</legend>
+        <form>
+            <input type="text" value="Фамилия" pattern="[A-Za-z]" maxlength="25" autofocus required placeholder="это поле обязательное"> <br>
+            <input type="text" value="Имя" pattern="[A-Za-z]" maxlength="20" required placeholder="это поле обязательное"> <br>
+            <input type="text" value="Отчество" pattern="[A-Za-z]" maxlength="24" required placeholder="это поле обязательное">
+        </form>
+        <fieldset>
+            <legend>Паспортные данные</legend>
+            <form>
+                <input type="text" pattern="[A-Z]{,2}" maxlength="2" required placeholder="это поле обязательное">
+                <input type="text" pattern="[0-9]" maxlength="7" required placeholder="это поле обязательное">
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Дата рождения</legend>
+            <form>
+              <input type="text" name="date" pattern="[0-9]{4}">
+              <select>
+                  <option value="1">Январь</option>
+                  <option value="2">Февраль</option>
+                  <option value="3">Март</option>
+                  <option value="4">Апрель</option>
+                  <option value="5">Май</option>
+                  <option value="6">Июнь</option>
+                  <option value="7">Июль</option>
+                  <option value="8">Август</option>
+                  <option value="9">Сентябрь</option>
+                  <option value="10">Октябрь</option>
+                  <option value="11">Ноябрь</option>
+                  <option value="12">Декабрь</option>
+              </select>
+            </form>
+        </fieldset>
+    </fieldset>
+</body>
+</html>
