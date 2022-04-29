@@ -5,27 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+.passport{
+    width: 2em;
+}
+
+</style>
+
 </head>
 <body>
+    <form name="searchf1" method="post" action="http://fe.it-academy.by/TestForm.php">  
     <fieldset>
         <legend>Личные данные</legend>
-        <form>
-            <input type="text" value="Фамилия" pattern="[A-Za-z]" maxlength="25" autofocus required placeholder="это поле обязательное"> <br>
-            <input type="text" value="Имя" pattern="[A-Za-z]" maxlength="20" required placeholder="это поле обязательное"> <br>
-            <input type="text" value="Отчество" pattern="[A-Za-z]" maxlength="24" required placeholder="это поле обязательное">
-        </form>
+            <input type="text" name="surname" pattern="^[А-Я].*" maxlength="25" autofocus required placeholder="Фамилия"> <br>
+            <input type="text" name="name" pattern="^[А-Я].*" maxlength="20" required placeholder="Имя"> <br>
+            <input type="text" name="middlename" pattern="^[А-Я].*" maxlength="24" required placeholder="Отчество">
+
         <fieldset>
             <legend>Паспортные данные</legend>
-            <form>
-                <input type="text" pattern="[A-Z]{,2}" maxlength="2" required placeholder="это поле обязательное">
-                <input type="text" pattern="[0-9]" maxlength="7" required placeholder="это поле обязательное">
-            </form>
+                <input class="passport" type="text" pattern="[A-Z]{1,2}" maxlength="2" required placeholder="эти" >
+                <input type="text" pattern="[0-9]{1,9}" maxlength="7" required placeholder="поля обязательные">
         </fieldset>
         <fieldset>
             <legend>Дата рождения</legend>
-            <form>
-              <input type="text" name="date" pattern="[0-9]{4}">
-              <select>
+
+              <input type="number" name="date" pattern="[1-2]{1}[09]{1}[0-9]{2}" maxlength="4" min="1900" max="2022">
+              <br>
+              <select name="month">
                   <option value="1">Январь</option>
                   <option value="2">Февраль</option>
                   <option value="3">Март</option>
@@ -39,8 +45,111 @@
                   <option value="11">Ноябрь</option>
                   <option value="12">Декабрь</option>
               </select>
-            </form>
+              <br>
+              <input type="number" name="number" min="1" max="31">
+
         </fieldset>
+        <select name="country" required placeholder="нацианальность">
+            <option value="РБ">РБ</option>
+            <option value="Украина">Украина</option>
+            <option value="Польша">Польша</option>
+            <option value="Литва">Литва</option>
+            <option value="Латвия">Литва</option>
+            <option value="Эстония">Эстония</option>
+            <option value="Германия">Германия</option>
+            <option value="Австрия">Австрия</option>
+        </select>
+        <h4>Адрес:</h4>
+        <textarea name="address"></textarea>
     </fieldset>
+
+    <fieldset>
+        <legend>Интересы</legend>
+
+    <fieldset>
+        <legend>array:Хобби</legend><label>
+            <input type="checkbox" name="checkbox1" value="Рыбалка"> Рыбалка
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="checkbox2" value="Астрономия"> Астрономия
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="checkbox3" value="Дайвинг"> Дайвинг
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="checkbox4" value="Марки"> Марки
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Домашние животные</legend>
+        <select name="animals[]" size="12" multiple>
+            <optgroup name="Попугаи" label="Попугаи">
+                <option value="1">Волнистый</option>
+                <option value="2"> Ара</option>
+                <option value="3">Неразлучник</option>
+            </optgroup>
+            <optgroup name="animals2" label="Рыбы" >
+                <option value="4">Караси</option>
+                <option value="5">Окуни</option>
+                <option value="6">Осетр</option>
+            </optgroup>
+            <optgroup name="animals3" label="Птицы" >
+                <option value="7">Стая ворон</option>
+                <option value="8">Аист</option>
+                <option value="9">Архиоптерикс</option>
+            </optgroup>
+           </select>
+    </fieldset>
+    </fieldset>
+    <fieldset>
+        <legend>Данные для входа и востановления пароля</legend>
+        <label>
+            <input type="text" name="login" required placeholder="login" pattern="^[A-Z].*" min="5" maxlength="20"> 
+        </label>
+        <br>
+        <label>
+            <input type="password" name="password" required placeholder="password" pattern="^[A-Z].*" min="10" maxlength="20" autocomplete="off"> 
+       </label>
+    </fieldset>
+    <fieldset>
+        <legend>Координаты</legend>
+        <label>
+            <input type="email" name="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" required placeholder="Введите адрес почты">
+        </label>
+        <br>
+        <label>
+            <input type="url" placeholder="адрес сайта" name="site"  required pattern="^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$" >
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Цифры</legend>
+     <label>
+         <input type="number" name="number" min="-2.5" max="2.5" step="0.1">
+     </label>
+        <br>
+     <label>
+        <input type="range" name="range" min="1" max="10">
+    </label>
+    </fieldset>
+    <fieldset>
+        <legend>Кнопки управления</legend>
+    <label>
+      <input type="submit" value="отправить"> 
+    </label>
+    <label>
+        <input type="reset" value="сбросить">
+    </label>
+    <br>
+    <label>
+        <input type="image" src="email.jpg" alt="email">
+    </label>
+    </fieldset>
+
+   
+    </form>
 </body>
 </html>
