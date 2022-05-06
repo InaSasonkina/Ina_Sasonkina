@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    div{
+        height: 20px;
+        width: 100px;
+        float: left;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: black;
+        padding: 2px;
+        background-color: #D3D3D3;
+        color: #8F858B;
+
+    }
+    div.popup{
+        display: none;
+
+    }
+
+    div:hover > div.popup{
+            display: block;
+
+        }
+ 
+    @media all and (max-width: 652px){
+        div{
+        float: none;
+     }
+
+
+        div:hover > div.popup{
+            display: block;
+            position: relative;
+            left: 102px; 
+            top: -21px;
+            z-index: 1;
+        }
+    }
+     div:hover{
+        background-color: #818181;
+        color: #C9D0C7;
+
+        }
+
+</style>
+
+</head>
+<body>
+    <div class="menu">Понедельник
+        <div class="popup">Завтрак</div>
+        <div class="popup">Обед</div>
+        <div class="popup">Ужин</div>
+    </div>
+    <div class="menu">Вторник
+        <div class="popup">Завтрак</div>
+        <div class="popup">Обед</div>
+        <div class="popup">Ужин</div>
+    </div>
+    <div class="menu">Среда
+        <div class="popup">Завтрак</div>
+        <div class="popup">Обед</div>
+        <div class="popup">Ужин</div>
+    </div>
+    <div class="menu">Четверг
+        <div class="popup">Завтрак</div>
+        <div class="popup">Обед</div>
+        <div class="popup">Ужин</div>
+    </div>
+    <div class="menu">Пятница
+        <div class="popup">Завтрак</div>
+        <div class="popup">Обед</div>
+        <div class="popup">Ужин</div>
+    </div>
+    <div class="menu">Суббота
+        <div class="popup">Завтрак</div>
+        <div class="popup">Обед</div>
+        <div class="popup">Ужин</div>
+    </div>
+    
+</body>
+</html>
